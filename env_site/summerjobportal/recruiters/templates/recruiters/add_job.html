@@ -1,0 +1,44 @@
+{% extends "users/layout.html" %} {% load static %} {% load crispy_forms_tags %}
+{% block content %} <br />
+<style>
+  body {
+    font-family: "Sweden Sans";
+    font-size: 20px;
+  }
+    footer {
+    font-family: "Sweden Sans";
+    font-size: 15px;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-md-10 col-lg-8 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h3 class="text-center">
+            <b>Add new vacancy</b>
+          </h3>
+          <span style="font-size: 14px"
+            ><p class="text-center">
+              (Please read the notes carefully.
+              <br />Errors can make your work less effective!)
+            </p></span
+          >
+          <form class="form-signin" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <br />
+              {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-lg btn-success btn-block" type="submit">
+                Post vacancy</button
+              ><br /><br />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
