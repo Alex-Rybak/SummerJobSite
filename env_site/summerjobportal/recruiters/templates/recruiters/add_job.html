@@ -28,7 +28,10 @@
             {% csrf_token %}
             <fieldset class="form-group">
               <br />
-              {{ form|crispy }}
+              <!---'title', 'company', 'location',
+                  'description', 'skills_req', 'job_type', 'link'-->
+        
+              {{form|crispy}}
             </fieldset>
             <div class="form-group">
               <button class="btn btn-lg btn-success btn-block" type="submit">
